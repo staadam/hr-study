@@ -12,7 +12,7 @@ export const users = [
   {
     name: 'Kacper Bakiewicz',
     attendence: '59%',
-    avarage: '4.1',
+    avarage: '3.1',
   },
   {
     name: 'Szymon Moszny',
@@ -22,6 +22,16 @@ export const users = [
   {
     name: 'Monika Batko',
     attendence: '79%',
-    avarage: '4.9',
+    avarage: '2.9',
+  },
+  {
+    name: 'Kacper Bakiewicz',
+    attendence: '59%',
+    avarage: '3.1',
+  },
+  {
+    name: 'Szymon Moszny',
+    attendence: '19%',
+    avarage: '5.0',
   },
 ];

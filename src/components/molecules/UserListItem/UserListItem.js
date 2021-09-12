@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper } from './UserListItem.styles';
 import Button from 'components/atoms/Button/Button';
+import Avarage from 'components/atoms/Avarage/Avarage';
+import Attendence from 'components/atoms/Attendence/Attendence';
 
 const UserListItem = ({ user: { avarage, name, attendence } }) => (
   <Wrapper>
-    <div>{avarage}</div>
-    <div>
-      <p>{name}</p>
-      <p>attendence: {attendence}</p>
-    </div>
+    <Avarage avarage={avarage} />
+    <Attendence user={{ name, attendence }} />
     <Button />
   </Wrapper>
 );
