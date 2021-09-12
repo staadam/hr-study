@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Wrapper } from './UserListItem.styles';
+import Button from 'components/atoms/Button/Button';
 
 const UserListItem = ({ user: { avarage, name, attendence } }) => (
-  <li key={name}>
+  <Wrapper>
     <div>{avarage}</div>
     <div>
       <p>{name}</p>
       <p>attendence: {attendence}</p>
     </div>
-    <button>X</button>
-  </li>
+    <Button />
+  </Wrapper>
 );
 
 UserListItem.propTypes = {
