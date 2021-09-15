@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { users as usersData } from 'data/users';
 import UsersList from 'components/organisms/UsersList/UsersList';
 import Form from 'components/organisms/Form/Form';
+import { Navigation } from 'components/molecules/Navigation/Navigation';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/globalStyle';
 import { theme } from 'assets/styles/theme';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const Wrapper = styled.div`
   background-color: ${({ theme: { colors } }) => colors.lightGrey};
@@ -62,6 +63,7 @@ const Root = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle></GlobalStyle>
         <Wrapper>
+          <Navigation />
           <Switch>
             <Route exact path="/">
               <UsersList deleteUser={deleteUser} users={users} />

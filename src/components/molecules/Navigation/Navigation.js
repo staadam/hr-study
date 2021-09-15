@@ -1,22 +1,28 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { StyledNavigation, StyledTitle, StyledList, StyledLink } from './Navigation.styles';
 
-const StyledNavigation = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-`;
-
-const Navigation = () => {
+export const Navigation = () => {
   return (
     <StyledNavigation>
-      <Link to="/">Dashboard</Link>
-      <Link to="/add-user">Add user</Link>
-      <Link to="/settings">Settings</Link>
-      <Link to="/logout">Logout</Link>
+      <StyledTitle>
+        <span>Study</span>
+        <span>Buddy</span>
+      </StyledTitle>
+      <StyledList>
+        <li>
+          <StyledLink exact to="/">
+            Dashboard
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/add-user">Add user</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/settings">Settings</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/logout">Logout</StyledLink>
+        </li>
+      </StyledList>
     </StyledNavigation>
   );
 };
-
-export default Navigation;
