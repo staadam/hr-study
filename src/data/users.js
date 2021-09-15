@@ -25,12 +25,12 @@ export const users = [
     avarage: '2.9',
   },
   {
-    name: 'Kacper Bakiewicz',
+    name: 'Kacper Kawasz',
     attendence: '59%',
     avarage: '3.1',
   },
   {
-    name: 'Szymon Moszny',
+    name: 'Daria Kaczorewicz',
     attendence: '19%',
     avarage: '5.0',
   },
