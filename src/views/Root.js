@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { users as usersData } from 'data/users';
 import UsersList from 'components/organisms/UsersList/UsersList';
 import Form from 'components/organisms/Form/Form';
-import { Navigation } from 'components/molecules/Navigation/Navigation';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/globalStyle';
 import { theme } from 'assets/styles/theme';
@@ -62,17 +62,18 @@ const Root = () => {
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle></GlobalStyle>
-        <Wrapper>
-          <Navigation />
-          <Switch>
-            <Route exact path="/">
-              <UsersList deleteUser={deleteUser} users={users} />
-            </Route>
-            <Route path="/add-user">
-              <Form formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />
-            </Route>
-          </Switch>
-        </Wrapper>
+        <MainTemplate>
+          <Wrapper>
+            <Switch>
+              <Route exact path="/">
+                <UsersList deleteUser={deleteUser} users={users} />
+              </Route>
+              <Route path="/add-user">
+                <Form formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />
+              </Route>
+            </Switch>
+          </Wrapper>
+        </MainTemplate>
       </ThemeProvider>
     </Router>
   );

@@ -2,17 +2,10 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledNavigation = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  max-width: 170px;
-  min-width: 130px;
-  width: 30%;
   padding: 10px 0 0 0;
   margin: 0;
   background-color: ${({ theme: { colors } }) => colors.lightGrey};
-  box-shadow: 0px 0 3px ${({ theme: { colors } }) => colors.darkGrey};
+  border-right: 1px solid ${({ theme: { colors } }) => colors.darkPurple};
 `;
 
 export const StyledTitle = styled.h2`
