@@ -5,11 +5,11 @@ import Button from 'components/atoms/Button/Button';
 import Avarage from 'components/atoms/Avarage/Avarage';
 import Attendence from 'components/atoms/Attendence/Attendence';
 
-const UserListItem = ({ user: { avarage, name, attendence } }) => (
+const UserListItem = ({ deleteUser, index, user: { avarage, name, attendence } }) => (
   <Wrapper>
     <Avarage avarage={avarage} />
     <Attendence user={{ name, attendence }} />
-    <Button />
+    <Button onClick={() => deleteUser(name)} />
   </Wrapper>
 );
 
