@@ -1,17 +1,19 @@
-import { Wrapper, StyledList, StyledTitle } from './UserList.styles';
+import { StyledList } from './UserList.styles';
+import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
+import { StyledTitle } from 'components/atoms/Title/Title';
 import UserListItem from 'components/molecules/UserListItem/UserListItem';
 
 const UsersList = ({ users, deleteUser }) => {
   return (
     <>
-      <Wrapper>
+      <ViewWrapper>
         <StyledTitle>Users list</StyledTitle>
         <StyledList>
           {users.map((user, i) => (
             <UserListItem deleteUser={deleteUser} index={i} user={user} key={user.name} />
           ))}
         </StyledList>
-      </Wrapper>
+      </ViewWrapper>
     </>
   );
 };
