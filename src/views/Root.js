@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { users as usersData } from 'data/users';
-import UsersList from 'components/organisms/UsersList/UsersList';
-import Form from 'components/organisms/Form/Form';
+import { Dashboard } from 'views/Dashboard';
+import { AddUser } from 'views/AddUser';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/globalStyle';
@@ -66,10 +66,10 @@ const Root = () => {
           <Wrapper>
             <Switch>
               <Route exact path="/">
-                <UsersList deleteUser={deleteUser} users={users} />
+                <Dashboard deleteUser={deleteUser} users={users} />
               </Route>
               <Route path="/add-user">
-                <Form formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />
+                <AddUser formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />
               </Route>
             </Switch>
           </Wrapper>
