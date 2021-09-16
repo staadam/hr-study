@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { StyledTitle } from 'components/atoms/Title/Title';
 import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
+import { UsersContext } from 'providers/UsersProvider';
 
-export const AddUser = ({ handleAddUser, formValues, handleInputChange }) => {
+const initialFormState = {
+  name: '',
+  attendence: '',
+  avarage: '',
+};
+
+export const AddUser = () => {
+  const { handleAddUser } = useContext(UsersContext);
+  const [formValues, setFormValues] = useState(initialFormState);
+
+  const handleInputChange = (e) => {
+    setFormValues((prevValue) => {
+      return {
+        ...prevValue,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+
+  const handleSubmitUser = (e) => {
+    e.preventDefault();
+    handleAddUser(formValues);
+    setFormValues(initialFormState);
+  };
+
   return (
     <>
-      <ViewWrapper as="form" onSubmit={handleAddUser}>
+      <ViewWrapper as="form" onSubmit={handleSubmitUser}>
         <StyledTitle>Add new student</StyledTitle>
         <FormField label="Name" id="name" name="name" value={formValues.name} onChange={handleInputChange} />
         <FormField label="Attendence" id="attendence" name="attendence" value={formValues.attendence} onChange={handleInputChange} />

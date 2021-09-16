@@ -1,11 +1,13 @@
+import { useContext } from 'react';
 import { StyledList } from './UserList.styles';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { StyledTitle } from 'components/atoms/Title/Title';
-import { UserShape } from 'types';
-import PropTypes from 'prop-types';
 import UserListItem from 'components/molecules/UserListItem/UserListItem';
+import { UsersContext } from 'providers/UsersProvider';
 
-const UsersList = ({ users, deleteUser }) => {
+const UsersList = () => {
+  const { users, deleteUser } = useContext(UsersContext);
+
   return (
     <>
       <ViewWrapper>
@@ -18,11 +20,6 @@ const UsersList = ({ users, deleteUser }) => {
       </ViewWrapper>
     </>
   );
-};
-
-UsersList.propTypes = {
-  users: PropTypes.arrayOf(PropTypes.shape(UserShape)),
-  deleteUser: PropTypes.func,
 };
 
 export default UsersList;

@@ -16,12 +16,6 @@ export const Navigation = () => {
         <li>
           <StyledLink to="/add-user">Add user</StyledLink>
         </li>
-        <li>
-          <StyledLink to="/settings">Settings</StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/logout">Logout</StyledLink>
-        </li>
       </StyledList>
     </StyledNavigation>
   );
