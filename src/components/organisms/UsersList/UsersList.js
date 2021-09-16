@@ -1,6 +1,8 @@
 import { StyledList } from './UserList.styles';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { StyledTitle } from 'components/atoms/Title/Title';
+import { UserShape } from 'types';
+import PropTypes from 'prop-types';
 import UserListItem from 'components/molecules/UserListItem/UserListItem';
 
 const UsersList = ({ users, deleteUser }) => {
@@ -16,6 +18,11 @@ const UsersList = ({ users, deleteUser }) => {
       </ViewWrapper>
     </>
   );
+};
+
+UsersList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape(UserShape)),
+  deleteUser: PropTypes.func,
 };
 
 export default UsersList;
