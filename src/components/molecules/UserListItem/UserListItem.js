@@ -5,7 +5,7 @@ import Button from 'components/atoms/DeleteButton/DeleteButton';
 import Avarage from 'components/atoms/Avarage/Avarage';
 import Attendence from 'components/atoms/Attendence/Attendence';
 
-const UserListItem = ({ deleteUser, index, user: { avarage, name, attendence } }) => (
+export const UserListItem = ({ deleteUser, index, user: { avarage, name, attendence } }) => (
   <Wrapper>
     <Avarage avarage={avarage} />
     <Attendence user={{ name, attendence }} />
@@ -20,5 +20,3 @@ UserListItem.propTypes = {
     attendence: PropTypes.string.isRequired,
   }),
 };
-
-export default UserListItem;

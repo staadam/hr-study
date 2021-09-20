@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { StyledList } from './UserList.styles';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { StyledTitle } from 'components/atoms/Title/Title';
-import UserListItem from 'components/molecules/UserListItem/UserListItem';
+import { UserListItem } from 'components/molecules/UserListItem/UserListItem';
 import { UsersContext } from 'providers/UsersProvider';
 
 const UsersList = () => {

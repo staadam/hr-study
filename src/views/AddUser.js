@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { StyledTitle } from 'components/atoms/Title/Title';
-import FormField from 'components/molecules/FormField/FormField';
+import { FormField } from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
 import { UsersContext } from 'providers/UsersProvider';
 
