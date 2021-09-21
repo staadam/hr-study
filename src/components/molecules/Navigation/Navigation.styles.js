@@ -7,6 +7,8 @@ export const StyledNavigation = styled.nav`
   background-color: ${({ theme: { colors } }) => colors.lightGrey};
   border-right: 1px solid ${({ theme: { colors } }) => colors.darkPurple};
   overflow: hidden;
+  grid-row: 1/3;
+  grid-column: 1/2;
 `;
 
 export const StyledTitle = styled.h2`
