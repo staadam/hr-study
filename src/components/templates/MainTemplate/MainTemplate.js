@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Navigation } from 'components/molecules/Navigation/Navigation';
 import { SearchBar } from 'components/organisms/SearchBar/SearchBar';
+import { NewsSection } from 'components/templates/NewsSection/NewsSection';
 
 const Wrapper = styled.main`
   display: grid;
@@ -10,12 +11,7 @@ const Wrapper = styled.main`
   margin: 0;
   padding: 0;
   background-color: ${({ theme: { colors } }) => colors.lightGrey};
-`;
-
-const News = styled.div`
-  grid-row: 1/3;
-  grid-column: 3/4;
-  border-left: 1px solid ${({ theme }) => theme.colors.darkPurple};
+  overflow: hidden;
 `;
 
 const MainTemplate = ({ children }) => {
@@ -23,9 +19,9 @@ const MainTemplate = ({ children }) => {
     <Wrapper>
       <Navigation />
       <SearchBar />
-      <News>
+      <NewsSection>
         <p>Siemanko</p>
-      </News>
+      </NewsSection>
       {children}
     </Wrapper>
   );
