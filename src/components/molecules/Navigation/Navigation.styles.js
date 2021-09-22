@@ -2,18 +2,22 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledNavigation = styled.nav`
-  padding: 10px 0 0 0;
+  /* padding: 10px 0 0 0; */
   margin: 0;
   background-color: ${({ theme: { colors } }) => colors.lightGrey};
   border-right: 1px solid ${({ theme: { colors } }) => colors.darkPurple};
   overflow: hidden;
   grid-row: 1/3;
   grid-column: 1/2;
+  display: grid;
+  grid-template-rows: 90px 1fr;
 `;
 
 export const StyledTitle = styled.h2`
   text-align: right;
-  padding: 20px 30px 20px 0px;
+  padding: 13px 15px 13px 0px;
+  margin: auto 0 0 0;
+
   font-size: ${({ theme }) => theme.fontSize.l};
   background-color: ${({ theme }) => theme.colors.darkGrey};
   color: ${({ theme }) => theme.colors.white};
@@ -21,6 +25,8 @@ export const StyledTitle = styled.h2`
 
   & span {
     display: block;
+    padding: 0;
+    margin: 0;
   }
 `;
 

@@ -1,5 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+
+  90% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export const Wrapper = styled.section`
   grid-row: 1/3;
@@ -52,3 +66,40 @@ export const ContentWrapper = styled.div`
     object-fit: cover;
   }
 `;
+
+const StyledLoading = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+`;
+
+const LoadingDot = styled.div`
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  animation: ${rotate} 2s ease-in-out infinite;
+  animation-delay: ${({ delay }) => `${delay}s`};
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.colors.darkPurple};
+  }
+`;
+
+export const Loading = ({ children }) => {
+  let dots = [];
+
+  for (let i = 1; i <= 5; i++) {
+    dots.push(<LoadingDot key={i} delay={i / 10} />);
+  }
+
+  return <StyledLoading data-testid="loader">{dots}</StyledLoading>;
+};
