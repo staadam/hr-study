@@ -9,6 +9,6 @@ export const SearchBar = () => (
         <strong>Teacher</strong>
       </p>
     </StatusInfo>
-    <Input />
+    <Input placeholder="Find by student name" />
   </SearchBarWrapper>
 );

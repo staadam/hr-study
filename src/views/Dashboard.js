@@ -1,40 +1,22 @@
 import UsersList from 'components/organisms/UsersList/UsersList';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { NavLink as Link } from 'react-router-dom';
-import axios from 'axios';
+import { Wrapper } from './Dashboard.styled';
+import { GroupNavigation } from 'components/molecules/GroupNavigation/GroupNavigation.js';
+import { useParams, Redirect } from 'react-router-dom';
+import { useStudents } from 'hooks/useStudents';
 
 export const Dashboard = () => {
-  const [students, setStudents] = useState([]);
-  const [groups, setGroups] = useState([]);
   const { group } = useParams();
-  console.log(group || groups[0], group, groups[0]);
+  const { students, groups } = useStudents({ group });
 
-  useEffect(() => {
-    axios
-      .get(`/groups`)
-      .then(({ data }) => setGroups(data.groups))
-      .catch((err) => console.log(err));
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get(`/students/${group || groups[0]}`)
-      .then(({ data }) => setStudents(data.students))
-      .catch((err) => console.log(err));
-  }, [group, groups]);
+  if (!groups.includes(group)) return <Redirect to="/group/A" />;
 
   return (
-    <ViewWrapper>
-      <nav>
-        {groups.map((group) => (
-          <Link to={`/group/${group}`} key={group}>
-            {group}
-          </Link>
-        ))}
-      </nav>
-      <UsersList users={students} />
-    </ViewWrapper>
+    <Wrapper>
+      <GroupNavigation groups={groups} group={group} />
+      <ViewWrapper>
+        <UsersList users={students} />
+      </ViewWrapper>
+    </Wrapper>
   );
 };
