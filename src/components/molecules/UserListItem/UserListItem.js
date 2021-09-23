@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper } from './UserListItem.styles';
-import Button from 'components/atoms/DeleteButton/DeleteButton';
-import Avarage from 'components/atoms/Avarage/Avarage';
-import Attendence from 'components/atoms/Attendence/Attendence';
+import { DeleteButton as Button } from 'components/atoms/DeleteButton/DeleteButton';
+import { Average } from 'components/atoms/Average/Average';
+import { Attendance } from 'components/atoms/Attendance/Attendance';
 
-export const UserListItem = ({ deleteUser, index, user: { avarage, name, attendence } }) => (
+export const UserListItem = ({ deleteUser, index, user: { average, name, attendance } }) => (
   <Wrapper>
-    <Avarage avarage={avarage} />
-    <Attendence user={{ name, attendence }} />
+    <Average average={average} />
+    <Attendance user={{ name, attendance }} />
     <Button onClick={() => deleteUser(name)} />
   </Wrapper>
 );
 
 UserListItem.propTypes = {
   userData: PropTypes.shape({
-    avarage: PropTypes.string.isRequired,
+    average: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    attendence: PropTypes.string.isRequired,
+    attendance: PropTypes.string.isRequired,
   }),
 };
