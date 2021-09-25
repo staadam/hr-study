@@ -9,9 +9,7 @@ export const Navigation = () => {
       </StyledTitle>
       <StyledList>
         <li>
-          <StyledLink exact to="/">
-            Dashboard
-          </StyledLink>
+          <StyledLink to="/group">Dashboard</StyledLink>
         </li>
         <li>
           <StyledLink to="/add-user">Add user</StyledLink>

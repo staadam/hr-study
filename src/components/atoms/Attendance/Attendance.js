@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledAttendence = styled.div`
+const StyledAttendance = styled.div`
   margin: 20px;
 
   & p:first-child {
@@ -18,13 +18,11 @@ const StyledAttendence = styled.div`
   }
 `;
 
-const Attendence = ({ user: { name, attendence } }) => {
+export const Attendance = ({ user: { name, attendance } }) => {
   return (
-    <StyledAttendence>
+    <StyledAttendance>
       <p>{name}</p>
-      <p>attendence: {attendence}</p>
-    </StyledAttendence>
+      <p>attendance: {attendance}</p>
+    </StyledAttendance>
   );
 };
-
-export default Attendence;
