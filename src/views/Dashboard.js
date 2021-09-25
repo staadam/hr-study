@@ -7,7 +7,7 @@ import { useStudents } from 'hooks/useStudents';
 
 export const Dashboard = () => {
   const { group } = useParams();
-  const { students, groups } = useStudents({ group });
+  const { students, groups } = useStudents({ groupId: group });
 
   if (!groups.includes(group)) return <Redirect to="/group/A" />;
 
