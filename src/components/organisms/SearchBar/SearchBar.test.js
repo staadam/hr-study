@@ -2,7 +2,7 @@ import { SearchBar } from './SearchBar';
 import { setupServer } from 'msw/node';
 import { handlers } from 'mocks/handlers';
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent, waitFor, toBeVisible } from 'test-utils';
+import { render, screen, fireEvent, waitFor } from 'test-utils';
 
 const server = setupServer(...handlers);
 
