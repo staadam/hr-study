@@ -1,23 +1,24 @@
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useCallback } from 'react';
 
-export const useStudents = ({ groupId = '' } = {}) => {
-  const [students, setStudents] = useState([]);
-  const [groups, setGroups] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`/groups`)
-      .then(({ data }) => setGroups(data.groups))
-      .catch((err) => console.log('fetching error'));
+export const useStudents = () => {
+  const getGroups = useCallback(async () => {
+    try {
+      const result = await axios.get(`/groups`);
+      return result.data.groups;
+    } catch (e) {
+      console.log(e);
+    }
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`/students/${groupId || groups[0]}`)
-      .then(({ data }) => setStudents(data.students))
-      .catch((err) => console.log('fetching error'));
-  }, [groupId, groups]);
+  const getStudentsByGroup = useCallback(async (groupId) => {
+    try {
+      const result = await axios.get(`/students/${groupId}`);
+      return result.data.students;
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
 
   const getMatchingStudents = async (searchedPhrase) => {
     try {
@@ -28,5 +29,5 @@ export const useStudents = ({ groupId = '' } = {}) => {
     }
   };
 
-  return { students, groups, getMatchingStudents };
+  return { getGroups, getStudentsByGroup, getMatchingStudents };
 };

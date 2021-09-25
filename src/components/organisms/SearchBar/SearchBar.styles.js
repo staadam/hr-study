@@ -12,8 +12,9 @@ export const SearchBarWrapper = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.darkPurple};
 
   ${Input} {
-    font-size: ${({ theme }) => theme.fontSize.xl};
+    font-size: ${({ theme }) => theme.fontSize.l};
     width: 100%;
+    padding: 10px 15px;
     border: 2px solid ${({ theme }) => theme.colors.lightPurple};
   }
 `;
@@ -33,13 +34,12 @@ export const SearchWrapper = styled.div`
   max-width: 350px;
 `;
 
-export const FindedStudents = styled.ul`
+export const SearchResult = styled.ul`
+  visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 999;
-
-  display: none;
 
   width: 100%;
   max-height: 400px;
@@ -52,21 +52,16 @@ export const FindedStudents = styled.ul`
   color: ${({ theme }) => theme.colors.darkGrey};
   list-style: none;
   overflow-y: scroll;
+`;
 
-  input:focus + & {
-    display: block;
+export const SearchResultItem = styled.li`
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 700;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid ${({ theme }) => theme.colors.lightPurple};
   }
 
-  & > *:focus {
-    display: block;
-  }
-
-  li {
-    padding: 10px;
-    cursor: pointer;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid ${({ theme }) => theme.colors.lightPurple};
-    }
-  }
+  background-color: ${({ highlightedIndex, theme }) => (highlightedIndex ? theme.colors.lightPurple : 'transparent')};
 `;
