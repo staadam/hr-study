@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import { NewsSection, query, url } from './NewsSection';
-import { renderWithProviders } from 'helpers/renderWithThemeProvider';
+import { render } from 'test-utils';
 
 const mock = new MockAdapter(axios);
 
@@ -14,22 +14,22 @@ describe('News Section', () => {
 
   it('Displays errors when the articles are not loaded', async () => {
     mock.onPost(url, { query }).reply(500);
-    renderWithProviders(<NewsSection />);
+    render(<NewsSection />);
     await screen.findByText(/Sorry/);
   });
 
   it('Displays the articles', async () => {
     mock.onPost(url, { query }).reply(200, { data: { allArticles: [{ id: 1, title: 'Test', category: 'Test', content: 'Test' }] } });
-    renderWithProviders(<NewsSection />);
+    render(<NewsSection />);
     await screen.findAllByText(/Test/);
   });
 
   it('Displays loading', async () => {
     // mock.onPost(url, { query }).reply(200, { data: { allArticles: [] } });
-    renderWithProviders(<NewsSection />);
+    render(<NewsSection />);
     await screen.findByTestId('loader');
     mock.onPost(url, { query }).reply(200, { data: { allArticles: [{ id: 1, title: 'Test', category: 'Test', content: 'Test' }] } });
-    renderWithProviders(<NewsSection />);
+    render(<NewsSection />);
     await screen.findAllByText(/Test/);
   });
 });
