@@ -9,9 +9,10 @@ export const StyledAverage = styled.div`
   height: 34px;
   border-radius: 50%;
   background-color: ${({ average, theme }) => {
-    if (average > 4) return theme.colors.success;
-    if (average > 3) return theme.colors.warning;
-    if (average > 2) return theme.colors.error;
+    if (average >= 4) return theme.colors.success;
+    if (average >= 3) return theme.colors.warning;
+    if (average >= 1) return theme.colors.error;
+    return theme.colors.grey;
   }};
   font-weight: 900;
   font-size: ${(props) => props.theme.fontSize.m};
