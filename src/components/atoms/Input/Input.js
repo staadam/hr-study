@@ -7,6 +7,7 @@ export const Input = styled.input`
   box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.09);
   border-radius: 25px;
   color: ${({ theme }) => theme.colors.darkGrey};
+  font-size: ${({ theme }) => theme.fontSize.l};
 
   &:focus {
     outline: none;
