@@ -5,6 +5,7 @@ export const Wrapper = styled.li`
   align-items: center;
   position: relative;
   list-style: none;
+  cursor: pointer;
 
   &:not(:last-child)::after {
     content: '';

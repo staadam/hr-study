@@ -5,13 +5,18 @@ import { GroupNavigation } from 'components/molecules/GroupNavigation/GroupNavig
 import { useParams, Redirect } from 'react-router-dom';
 import { useStudents } from 'hooks/useStudents';
 import React, { useState, useEffect } from 'react';
+import { useModal } from 'components/organisms/Modal/useModal';
+import { StudentDetails } from 'components/molecules/StudentDetails/StudentDetails';
 
 export const Dashboard = () => {
   const { group } = useParams();
-  const { getGroups, getStudentsByGroup } = useStudents();
+  const { getGroups, getStudentsByGroup, getStudentsById } = useStudents();
 
   const [groups, setGroups] = useState([]);
   const [students, setStudents] = useState([]);
+  const [currentStudent, setCurrenStudent] = useState([]);
+
+  const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
 
   useEffect(() => {
     (async () => {
@@ -27,13 +32,24 @@ export const Dashboard = () => {
     })();
   }, [getStudentsByGroup, group]);
 
+  const handleOpenStudentDetails = async (id) => {
+    const { student } = await getStudentsById(id);
+    setCurrenStudent(student);
+    handleOpenModal();
+  };
+
   if (!group && groups.length > 0) return <Redirect to="/group/A" />;
 
   return (
     <Wrapper>
       <GroupNavigation groups={groups} group={group} />
       <ViewWrapper>
-        <UsersList users={students} />
+        <UsersList users={students} handleOpenStudentDetails={handleOpenStudentDetails} />
+        {isOpen ? (
+          <Modal handleClose={handleCloseModal}>
+            <StudentDetails currentStudent={currentStudent} />
+          </Modal>
+        ) : null}
       </ViewWrapper>
     </Wrapper>
   );
