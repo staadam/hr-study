@@ -8,7 +8,6 @@ export const students = [
     return res(ctx.status(200), ctx.json(matchingStudents));
   }),
   rest.get('/students/:id', (req, res, ctx) => {
-    console.log('sss');
     if (req.params.id) {
       const matchingStudents = db.student.findFirst({ where: { id: { equals: req.params.id } } });
       if (!matchingStudents) {
