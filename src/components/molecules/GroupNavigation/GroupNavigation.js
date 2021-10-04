@@ -6,8 +6,8 @@ export const GroupNavigation = ({ groups = [], group }) => {
     <StyledNav>
       <StyledTitle>Group {group}</StyledTitle>
       {groups.map((group) => (
-        <StyledLink to={`/group/${group}`} key={group}>
-          {group}
+        <StyledLink to={`/group/${group.id}`} key={group.id}>
+          {group.id}
         </StyledLink>
       ))}
     </StyledNav>
