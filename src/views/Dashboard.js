@@ -6,7 +6,31 @@ import { useParams, Redirect } from 'react-router-dom';
 import { useStudents } from 'hooks/useStudents';
 import React, { useState, useEffect } from 'react';
 import { useModal } from 'components/organisms/Modal/useModal';
+import { Modal } from 'components/organisms/Modal/Modal';
 import { StudentDetails } from 'components/molecules/StudentDetails/StudentDetails';
+
+const currentStudentMock = {
+  id: '2',
+  name: 'Krzysztof Batko',
+  attendance: '23%',
+  average: '2.3',
+  group: 'A',
+  course: 'Business Philosophy',
+  grades: [
+    {
+      name: 'Bussiness Philosophy',
+      average: '3.3',
+    },
+    {
+      name: 'Marketing',
+      average: '4.7',
+    },
+    {
+      name: 'Modern Economy',
+      average: '2.5',
+    },
+  ],
+};
 
 export const Dashboard = () => {
   const { group } = useParams();
@@ -16,7 +40,7 @@ export const Dashboard = () => {
   const [students, setStudents] = useState([]);
   const [currentStudent, setCurrenStudent] = useState([]);
 
-  const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
+  const { isOpen, handleOpenModal, handleCloseModal } = useModal();
 
   useEffect(() => {
     (async () => {
@@ -45,11 +69,10 @@ export const Dashboard = () => {
       <GroupNavigation groups={groups} group={group} />
       <ViewWrapper>
         <UsersList users={students} handleOpenStudentDetails={handleOpenStudentDetails} />
-        {isOpen ? (
-          <Modal handleClose={handleCloseModal}>
-            <StudentDetails currentStudent={currentStudent} />
-          </Modal>
-        ) : null}
+
+        <Modal isOpen={isOpen} handleClose={handleCloseModal}>
+          <StudentDetails currentStudent={currentStudentMock} />
+        </Modal>
       </ViewWrapper>
     </Wrapper>
   );

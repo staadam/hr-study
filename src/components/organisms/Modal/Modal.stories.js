@@ -12,13 +12,28 @@ const Template = (args) => (
   </Modal>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Students = Template.bind({});
+Students.args = {
   currentStudent: {
     id: '2',
     name: 'Krzysztof Batko',
     attendance: '23%',
-    average: '3.3',
+    average: '2.3',
     group: 'A',
+    course: 'Business Philosophy',
+    grades: [
+      {
+        name: 'Bussiness Philosophy',
+        average: '3.3',
+      },
+      {
+        name: 'Marketing',
+        average: '4.7',
+      },
+      {
+        name: 'Modern Economy',
+        average: '2.5',
+      },
+    ],
   },
 };

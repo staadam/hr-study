@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Modal } from './Modal';
 
 export const useModal = (initialState = false) => {
   const [isOpen, setModalState] = useState(initialState);
@@ -11,5 +10,5 @@ export const useModal = (initialState = false) => {
     setModalState(true);
   };
 
-  return { Modal, isOpen, handleOpenModal, handleCloseModal };
+  return { isOpen, handleOpenModal, handleCloseModal };
 };
