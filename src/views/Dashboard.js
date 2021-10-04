@@ -9,29 +9,6 @@ import { useModal } from 'components/organisms/Modal/useModal';
 import { Modal } from 'components/organisms/Modal/Modal';
 import { StudentDetails } from 'components/molecules/StudentDetails/StudentDetails';
 
-const currentStudentMock = {
-  id: '2',
-  name: 'Krzysztof Batko',
-  attendance: '23%',
-  average: '2.3',
-  group: 'A',
-  course: 'Business Philosophy',
-  grades: [
-    {
-      name: 'Bussiness Philosophy',
-      average: '3.3',
-    },
-    {
-      name: 'Marketing',
-      average: '4.7',
-    },
-    {
-      name: 'Modern Economy',
-      average: '2.5',
-    },
-  ],
-};
-
 export const Dashboard = () => {
   const { group } = useParams();
   const { getGroups, getStudentsByGroup, getStudentsById } = useStudents();
@@ -57,7 +34,7 @@ export const Dashboard = () => {
   }, [getStudentsByGroup, group]);
 
   const handleOpenStudentDetails = async (id) => {
-    const { student } = await getStudentsById(id);
+    const student = await getStudentsById(id);
     setCurrenStudent(student);
     handleOpenModal();
   };
@@ -71,7 +48,7 @@ export const Dashboard = () => {
         <UsersList users={students} handleOpenStudentDetails={handleOpenStudentDetails} />
 
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <StudentDetails currentStudent={currentStudentMock} />
+          <StudentDetails currentStudent={currentStudent} />
         </Modal>
       </ViewWrapper>
     </Wrapper>
