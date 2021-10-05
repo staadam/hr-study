@@ -1,6 +1,9 @@
+import { useAuth } from 'hooks/useAuth';
 import { StyledNavigation, StyledTitle, StyledList, StyledLink } from './Navigation.styles';
 
 export const Navigation = () => {
+  const auth = useAuth();
+
   return (
     <StyledNavigation>
       <StyledTitle>
@@ -12,7 +15,9 @@ export const Navigation = () => {
           <StyledLink to="/group">Dashboard</StyledLink>
         </li>
         <li>
-          <StyledLink to="/add-user">Add user</StyledLink>
+          <StyledLink as="a" onClick={auth.signOut}>
+            Sign Out
+          </StyledLink>
         </li>
       </StyledList>
     </StyledNavigation>
