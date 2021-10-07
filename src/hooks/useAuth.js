@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
+import { useError } from './useError';
 
 const AuthContext = React.createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
+  const { dispatchError } = useError();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -14,9 +16,7 @@ export const AuthProvider = ({ children }) => {
         try {
           const response = await axios.get('/me', { headers: { authorization: `Bearer ${token}` } });
           setUser(response.data);
-        } catch (e) {
-          console.log(e);
-        }
+        } catch (e) {}
       })();
     }
   }, []);
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       setUser(response.data);
       localStorage.setItem('token', response.data.token);
     } catch (e) {
-      // setError('Please provide valid user data');
+      dispatchError('Invalid email or password');
     }
   };
 

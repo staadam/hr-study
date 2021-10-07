@@ -47,9 +47,11 @@ export const Dashboard = () => {
       <ViewWrapper>
         <UsersList users={students} handleOpenStudentDetails={handleOpenStudentDetails} />
 
-        <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <StudentDetails currentStudent={currentStudent} />
-        </Modal>
+        {currentStudent ? (
+          <Modal isOpen={isOpen} handleClose={handleCloseModal}>
+            <StudentDetails currentStudent={currentStudent} />
+          </Modal>
+        ) : null}
       </ViewWrapper>
     </Wrapper>
   );

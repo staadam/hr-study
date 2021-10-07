@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useCallback } from 'react';
+import { useError } from './useError';
 
 const studentsAPI = axios.create({});
 
@@ -19,12 +20,14 @@ studentsAPI.interceptors.request.use(
 );
 
 export const useStudents = () => {
+  const { dispatchError } = useError();
+
   const getGroups = useCallback(async () => {
     try {
       const result = await studentsAPI.get(`/groups`);
       return result.data.groups;
     } catch (e) {
-      console.log(e);
+      dispatchError(`Couldn't load groups. Please try again later`);
     }
   }, []);
 
@@ -33,7 +36,7 @@ export const useStudents = () => {
       const result = await studentsAPI.get(`/groups/${groupId}`);
       return result.data.students;
     } catch (e) {
-      console.log(e);
+      dispatchError(`Couldn't load students from this group. Please try again later`);
     }
   }, []);
 
@@ -42,7 +45,7 @@ export const useStudents = () => {
       const res = await studentsAPI.get(`/students/${id}`);
       return res.data.student;
     } catch (e) {
-      console.log(e);
+      dispatchError(`Couldn't load students details. Please try again later`);
     }
   }, []);
 
@@ -51,7 +54,7 @@ export const useStudents = () => {
       const res = await studentsAPI.post(`/students/search`, { studentName: searchedPhrase });
       return res.data;
     } catch (e) {
-      console.log(e);
+      dispatchError(`Couldn't find student. Please try again later`);
     }
   };
 
