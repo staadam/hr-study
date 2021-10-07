@@ -36,7 +36,7 @@ export const useStudents = () => {
       const result = await studentsAPI.get(`/groups/${groupId}`);
       return result.data.students;
     } catch (e) {
-      console.log(e);
+      dispatchError(`Couldn't load students from this group. Please try again later`);
     }
   }, []);
 
@@ -45,7 +45,7 @@ export const useStudents = () => {
       const res = await studentsAPI.get(`/students/${id}`);
       return res.data.student;
     } catch (e) {
-      dispatchError(`Couldn't load students from this group. Please try again later`);
+      dispatchError(`Couldn't load students details. Please try again later`);
     }
   }, []);
 

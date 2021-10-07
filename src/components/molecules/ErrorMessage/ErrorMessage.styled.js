@@ -32,7 +32,8 @@ export const Wrapper = styled.div`
   background-color: #fff;
   color: ${({ theme }) => theme.colors.error};
   transform: translate(-50%, 0);
-  animation: ${slideAnimation} ease-in-out 1s 1 reverse, ${slideAnimation} ease-in-out 1s 6s 1 forwards;
+  animation: ${slideAnimation} ease-in-out 0.5s 1 reverse, ${slideAnimation} ease-in-out 0.5s 5.5s 1 forwards;
+  z-index: 999;
 
   p {
     margin: 0;
@@ -59,7 +60,7 @@ export const Wrapper = styled.div`
 
   &::before {
     transform: translateX(-50%) scaleX(1);
-    animation: ${shrinkAnimation} 5s 1s linear 1 forwards;
+    animation: ${shrinkAnimation} 5s 0.5s linear 1 forwards;
   }
 
   ${Title} {
