@@ -16,7 +16,7 @@ export const Navigation = () => {
         </li>
         <li>
           <StyledLink as="a" onClick={auth.signOut}>
-            Sign Out
+            Logout
           </StyledLink>
         </li>
       </StyledList>

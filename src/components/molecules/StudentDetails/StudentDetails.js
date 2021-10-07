@@ -1,5 +1,5 @@
 import { Wrapper, BigAverage, StyledDetails, StyledLabel, StyledInfo, StyledSubjectInfo } from './StudentDetails.styled';
-import { StyledTitle as Title } from 'components/atoms/Title/Title';
+import { Title } from 'components/atoms/Title/Title';
 import { StyledAverage as Average } from 'components/atoms/Average/Average.styles';
 
 export const StudentDetails = ({ currentStudent }) => {
