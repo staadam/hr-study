@@ -10,10 +10,10 @@ export const SearchBar = () => {
 
   const { getMatchingStudents } = useStudents();
 
-  const findStudents = debounce(async ({ inputValue }) => {
+  const findStudents = async ({ inputValue }) => {
     const students = await getMatchingStudents(inputValue);
     setMatchingStudents(students);
-  }, 500);
+  };
 
   const { isOpen, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } = useCombobox({
     items: matchingStudents,

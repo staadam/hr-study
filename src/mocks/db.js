@@ -1,8 +1,9 @@
 import { factory, primaryKey } from '@mswjs/data';
 import faker from 'faker';
 
-const groups = ['A', 'B', 'C'];
+faker.seed(123);
 
+const groups = ['A', 'B', 'C'];
 const getRandomGroup = (index) => groups[index];
 const getRandomAverage = () => faker.datatype.number({ min: 2, max: 5, precision: 0.1 });
 
