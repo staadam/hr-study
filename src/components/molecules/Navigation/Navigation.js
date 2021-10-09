@@ -15,6 +15,9 @@ export const Navigation = () => {
           <StyledLink to="/group">Dashboard</StyledLink>
         </li>
         <li>
+          <StyledLink to="/notes">Notes</StyledLink>
+        </li>
+        <li>
           <StyledLink as="a" onClick={auth.signOut}>
             Logout
           </StyledLink>

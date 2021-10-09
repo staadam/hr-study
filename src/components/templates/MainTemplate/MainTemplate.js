@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Navigation } from 'components/molecules/Navigation/Navigation';
 import { SearchBar } from 'components/organisms/SearchBar/SearchBar';
 import { NewsSection } from 'components/templates/NewsSection/NewsSection';
+import { NotesWidget } from 'components/organisms/NotesWidget/NotesWidget';
 
 const Wrapper = styled.main`
   display: grid;
@@ -19,9 +20,8 @@ const MainTemplate = ({ children }) => {
     <Wrapper>
       <Navigation />
       <SearchBar />
-      <NewsSection>
-        <p>Siemanko</p>
-      </NewsSection>
+      <NewsSection />
+      <NotesWidget />
       {children}
     </Wrapper>
   );
