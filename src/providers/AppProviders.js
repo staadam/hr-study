@@ -5,18 +5,22 @@ import { GlobalStyle } from 'assets/styles/globalStyle';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from 'hooks/useAuth';
 import { ErrorProvider } from 'hooks/useError';
+import { store } from 'store/store';
+import { Provider } from 'react-redux';
 
 export const AppProviders = ({ children }) => {
   return (
     <Router>
-      <ThemeProvider theme={theme}>
-        <ErrorProvider>
-          <AuthProvider>
-            <GlobalStyle></GlobalStyle>
-            {children}
-          </AuthProvider>
-        </ErrorProvider>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <ErrorProvider>
+            <AuthProvider>
+              <GlobalStyle></GlobalStyle>
+              {children}
+            </AuthProvider>
+          </ErrorProvider>
+        </ThemeProvider>
+      </Provider>
     </Router>
   );
 };

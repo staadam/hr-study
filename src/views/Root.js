@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dashboard } from 'views/Dashboard';
-import { AddUser } from 'views/AddUser';
+import { Notes } from './Notes';
 import { Wrapper } from './Root.styled';
 // import UsersProvider from 'providers/UsersProvider';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
@@ -23,8 +23,8 @@ const AuthenticatedApp = () => {
           <Route path="/group/:group?">
             <Dashboard />
           </Route>
-          <Route path="/add-user">
-            <AddUser />
+          <Route path="/notes">
+            <Notes />
           </Route>
         </Switch>
       </Wrapper>
