@@ -9,5 +9,5 @@
     "es6": true
   },
   "parser": "babel-eslint",
-  "plugins": ["prettier", "plugin:cypress/recomended"]
+  "plugins": ["prettier"]
 }

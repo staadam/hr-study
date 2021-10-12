@@ -3,49 +3,41 @@ import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { Wrapper } from './Dashboard.styled';
 import { GroupNavigation } from 'components/molecules/GroupNavigation/GroupNavigation.js';
 import { useParams, Redirect } from 'react-router-dom';
-import { useStudents } from 'hooks/useStudents';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useModal } from 'components/organisms/Modal/useModal';
 import { Modal } from 'components/organisms/Modal/Modal';
 import { StudentDetails } from 'components/molecules/StudentDetails/StudentDetails';
+import { useGetGroupsQuery, useGetStudentsDetailsMutation, useGetStudentsByGroupQuery } from 'store/store';
+import { useError } from 'hooks/useError';
 
 export const Dashboard = () => {
+  const { dispatchError } = useError();
   const { group } = useParams();
-  const { getGroups, getStudentsByGroup, getStudentsById } = useStudents();
-
-  const [groups, setGroups] = useState([]);
-  const [students, setStudents] = useState([]);
   const [currentStudent, setCurrenStudent] = useState([]);
-
   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
-
-  useEffect(() => {
-    (async () => {
-      const groups = await getGroups();
-      setGroups(groups);
-    })();
-  }, [getGroups]);
-
-  useEffect(() => {
-    (async () => {
-      const students = await getStudentsByGroup(group);
-      setStudents(students);
-    })();
-  }, [getStudentsByGroup, group]);
+  const { data, isLoading } = useGetGroupsQuery();
+  const [getStudentsDetails] = useGetStudentsDetailsMutation();
+  const studentsByGroup = useGetStudentsByGroupQuery(group);
 
   const handleOpenStudentDetails = async (id) => {
-    const student = await getStudentsById(id);
-    setCurrenStudent(student);
-    handleOpenModal();
+    try {
+      const { data } = await getStudentsDetails(id);
+      setCurrenStudent(data.student);
+      handleOpenModal();
+    } catch (e) {
+      dispatchError(`Couldn't load students details. Please try again later`);
+    }
   };
 
-  if (!group && groups.length > 0) return <Redirect to="/group/A" />;
+  if (isLoading || studentsByGroup.isLoading) return <Wrapper>Loading...</Wrapper>;
+
+  if (!group && data.groups.length > 0) return <Redirect to="/group/A" />;
 
   return (
     <Wrapper>
-      <GroupNavigation groups={groups} group={group} />
+      <GroupNavigation groups={data.groups} group={group} />
       <ViewWrapper>
-        <UsersList users={students} handleOpenStudentDetails={handleOpenStudentDetails} />
+        <UsersList users={studentsByGroup.data.students} handleOpenStudentDetails={handleOpenStudentDetails} />
 
         {currentStudent ? (
           <Modal isOpen={isOpen} handleClose={handleCloseModal}>
