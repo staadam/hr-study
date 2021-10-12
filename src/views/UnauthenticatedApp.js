@@ -2,6 +2,7 @@ import { FormField } from 'components/molecules/FormField/FormField';
 import { useForm } from 'react-hook-form';
 import { useAuth } from 'hooks/useAuth';
 import { Button } from 'components/atoms/Button/Button';
+import { FormWrapper } from './UnauthenticatedApp.styled';
 
 export const UnauthenticatedApp = () => {
   const auth = useAuth();
@@ -13,10 +14,7 @@ export const UnauthenticatedApp = () => {
   } = useForm();
 
   return (
-    <form
-      style={{ width: '100%', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
-      onSubmit={handleSubmit(auth.signIn)}
-    >
+    <FormWrapper onSubmit={handleSubmit(auth.signIn)}>
       <FormField label="login" name="login" id="login" {...register('login', { required: true })} />
       {errors.login ? <span>Login is required</span> : null}
       <FormField label="password" name="password" id="password" type="password" {...register('password', { required: true })} />
@@ -24,6 +22,6 @@ export const UnauthenticatedApp = () => {
       <Button isBig type="submit">
         Sign in
       </Button>
-    </form>
+    </FormWrapper>
   );
 };

@@ -1,18 +1,17 @@
 import { Input } from 'components/atoms/Input/Input';
 import { useState } from 'react';
 import { StatusInfo, SearchBarWrapper, SearchResult, SearchWrapper, SearchResultItem } from './SearchBar.styles';
-import { useStudents } from 'hooks/useStudents';
-import debounce from 'lodash.debounce';
+import { useSearchStudentsMutation } from 'store/store';
 import { useCombobox } from 'downshift';
 
 export const SearchBar = () => {
   const [matchingStudents, setMatchingStudents] = useState([]);
 
-  const { getMatchingStudents } = useStudents();
+  const [getMatchingStudents] = useSearchStudentsMutation();
 
   const findStudents = async ({ inputValue }) => {
-    const students = await getMatchingStudents(inputValue);
-    setMatchingStudents(students);
+    const { data } = await getMatchingStudents({ studentName: inputValue });
+    setMatchingStudents(data);
   };
 
   const { isOpen, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } = useCombobox({
