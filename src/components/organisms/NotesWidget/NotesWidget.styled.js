@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   background: white;
   border: 2px solid ${({ theme }) => theme.colors.darkGrey};
   box-sizing: border-box;
+  z-index: 999;
 `;
 
 export const WidgetHandler = styled.button`

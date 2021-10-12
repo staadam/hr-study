@@ -13,6 +13,10 @@ const Wrapper = styled.main`
   padding: 0;
   background-color: ${({ theme: { colors } }) => colors.lightGrey};
   overflow: hidden;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 150px 1fr;
+  }
 `;
 
 const MainTemplate = ({ children }) => {
