@@ -20,7 +20,7 @@ export const query = `
 
 export const url = 'https://graphql.datocms.com/';
 
-export const NewsSection = () => {
+export const NewsSection = ({ isClear = false }) => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState('');
 
@@ -42,7 +42,7 @@ export const NewsSection = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper isClear={isClear}>
       <NewsSectionHeader>News feed section</NewsSectionHeader>
       {articles.length > 0 && !error ? (
         articles.map(({ id, title, category, content, image = null }) => (

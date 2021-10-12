@@ -18,6 +18,11 @@ export const Navigation = () => {
           <StyledLink to="/notes">Notes</StyledLink>
         </li>
         <li>
+          <StyledLink className="news" to="/news">
+            News
+          </StyledLink>
+        </li>
+        <li>
           <StyledLink as="a" onClick={auth.signOut}>
             Logout
           </StyledLink>

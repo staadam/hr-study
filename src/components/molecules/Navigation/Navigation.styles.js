@@ -66,4 +66,13 @@ export const StyledLink = styled(NavLink)`
     transform: translate(100%, -50%);
     background-color: ${({ theme }) => theme.colors.darkPurple};
   }
+
+  &.news {
+    display: none;
+    @media (max-width: 1200px) {
+      display: block;
+    }
+  }
 `;
+
+// export const StyledLinkNews = styled.StyledLink

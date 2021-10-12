@@ -3,6 +3,7 @@ import { Notes } from './Notes';
 import { Wrapper } from './Root.styled';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { NewsSection } from 'components/templates/NewsSection/NewsSection';
 
 export const AuthenticatedApp = () => {
   return (
@@ -17,6 +18,9 @@ export const AuthenticatedApp = () => {
           </Route>
           <Route path="/notes">
             <Notes />
+          </Route>
+          <Route path="/news">
+            <NewsSection isClear />
           </Route>
         </Switch>
       </Wrapper>

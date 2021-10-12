@@ -24,8 +24,12 @@ export const Wrapper = styled.section`
   align-items: flex-start;
 
   padding: 50px;
-  border-left: 1px solid ${({ theme }) => theme.colors.darkPurple};
-  overflow-y: scroll;
+  border-left: ${({ theme, isClear }) => (isClear ? 'none' : `1px solid ${theme.colors.darkPurple}`)};
+  overflow-y: ${({ isClear }) => (isClear ? 'visible' : 'scroll')};
+
+  @media (max-width: 1200px) {
+    display: ${({ isClear }) => (isClear ? 'flex' : 'none')};
+  }
 `;
 
 export const NewsSectionHeader = styled.h2`
@@ -64,6 +68,10 @@ export const ContentWrapper = styled.div`
     max-width: 200px;
     margin-left: 35px;
     object-fit: cover;
+  }
+
+  @media (max-width: 1440px) {
+    flex-direction: column;
   }
 `;
 
