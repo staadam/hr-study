@@ -41,7 +41,7 @@ export const Dashboard = () => {
 
         {currentStudent ? (
           <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-            <StudentDetails currentStudent={currentStudent} />
+            <StudentDetails currentStudent={currentStudent} updateStudentDetails={setCurrenStudent} />
           </Modal>
         ) : null}
       </ViewWrapper>

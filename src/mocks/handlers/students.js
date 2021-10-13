@@ -18,4 +18,18 @@ export const students = [
 
     return res(ctx.status(200), ctx.json({ student: {} }));
   }),
+  rest.post('/students/grade', (req, res, ctx) => {
+    const { id, grade } = req.body;
+    const updatedStudent = db.student.update({
+      where: {
+        id: {
+          equals: id,
+        },
+      },
+      data: {
+        grades: (prevGrades) => [...prevGrades, grade],
+      },
+    });
+    return res(ctx.status(200), ctx.json({ student: updatedStudent }));
+  }),
 ];

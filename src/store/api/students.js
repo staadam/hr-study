@@ -16,10 +16,19 @@ export const studentsApi = createApi({
       query: (id) => ({
         url: `students/${id}`,
         method: 'GET',
+        providesTags: ['Notes'],
       }),
     }),
     getStudentsByGroup: builder.query({
       query: (id) => `groups/${id}`,
+    }),
+    addStudentGrade: builder.mutation({
+      query: (body) => ({
+        url: `students/grade`,
+        method: 'POST',
+        body,
+      }),
+      invalidatesTags: ['Notes'],
     }),
   }),
 });
