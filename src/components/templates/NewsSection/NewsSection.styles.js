@@ -30,6 +30,11 @@ export const Wrapper = styled.section`
   @media (max-width: 1200px) {
     display: ${({ isClear }) => (isClear ? 'flex' : 'none')};
   }
+
+  @media (max-width: 400px) {
+    max-width: 100%;
+    padding: 30px;
+  }
 `;
 
 export const NewsSectionHeader = styled.h2`
