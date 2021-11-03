@@ -28,13 +28,7 @@ export const Notes = () => {
       <FormWrapper>
         <StyledFormField label="Title" name="title" id="title" {...register('title', { required: true })} />
         {errors.title ? 'Title is required' : null}
-        <StyledFormField
-          isTextarea
-          label="Content"
-          name="content"
-          id="content"
-          {...register('content', { required: true })}
-        />
+        <StyledFormField isTextarea label="Content" name="content" id="content" {...register('content', { required: true })} />
         {errors.content ? 'Content of the note is required' : null}
         <Button onClick={handleSubmit(handleAddNote)}>Add</Button>
       </FormWrapper>
@@ -43,9 +37,7 @@ export const Notes = () => {
       ) : (
         <NotesWrapper>
           {data.notes.length ? (
-            data.notes.map(({ id, title, content }) => (
-              <Note key={id} title={title} content={content} id={id} />
-            ))
+            data.notes.map(({ id, title, content }) => <Note key={id} title={title} content={content} id={id} />)
           ) : (
             <p>No notes so far</p>
           )}

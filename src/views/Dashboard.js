@@ -39,10 +39,7 @@ export const Dashboard = () => {
       <SEO directory={'Dashboard'} />
       <GroupNavigation groups={data.groups} group={group} />
       <ViewWrapper>
-        <UsersList
-          users={studentsByGroup.data.students}
-          handleOpenStudentDetails={handleOpenStudentDetails}
-        />
+        <UsersList users={studentsByGroup.data.students} handleOpenStudentDetails={handleOpenStudentDetails} />
 
         {currentStudent ? (
           <Modal isOpen={isOpen} handleClose={handleCloseModal}>
