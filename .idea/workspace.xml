@@ -2,7 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af937718-ec1e-4ccd-b637-4e4162aa0fe9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/list.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/sb-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/hamburger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/molecules/GradeForm/GradeForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/molecules/Note/Note.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/molecules/Note/Note.styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/molecules/SEO/SEO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/NotesWidget/NotesWidget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/NotesWidget/NotesWidget.styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2e/cypress.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2e/cypress/fixtures/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2e/cypress/integration/Auth.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2e/cypress/integration/Notes.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2e/cypress/plugins/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2e/cypress/support/commands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2e/cypress/support/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mocks/handlers/notes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/api/groups.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/api/notes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/api/students.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/AuthenticatedApp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Notes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Notes.styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/UnauthenticatedApp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/UnauthenticatedApp.styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/globalStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/globalStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/Average/Average.styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Average/Average.styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/molecules/FormField/FormField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/FormField/FormField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/Navigation/Navigation.styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/Navigation/Navigation.styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/StudentDetails/StudentDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/StudentDetails/StudentDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/StudentDetails/StudentDetails.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/StudentDetails/StudentDetails.styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/Modal/Modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/Modal/Modal.styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/Modal/Modal.styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/SearchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/SearchBar/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/SearchBar/SearchBar.styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/SearchBar/SearchBar.styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/templates/MainTemplate/MainTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/templates/MainTemplate/MainTemplate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/templates/NewsSection/NewsSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/templates/NewsSection/NewsSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/templates/NewsSection/NewsSection.styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/templates/NewsSection/NewsSection.styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useStudents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useWindowSize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/data/events.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/data/groups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/data/students.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/data/teachers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/handlers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/handlers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/handlers/students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/handlers/students.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/providers/AppProviders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/AppProviders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Dashboard.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Dashboard.styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Root.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Root.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Root.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Root.styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +127,7 @@
       <workItem from="1635177893560" duration="109000" />
       <workItem from="1635932018734" duration="5902000" />
       <workItem from="1635961635593" duration="2575000" />
-      <workItem from="1635964685129" duration="93000" />
+      <workItem from="1635964685129" duration="312000" />
     </task>
     <servers />
   </component>

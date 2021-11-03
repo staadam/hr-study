@@ -1,22 +1,35 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 import { GlobalStyle } from 'assets/styles/globalStyle';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { AuthProvider } from 'hooks/useAuth';
 import { ErrorProvider } from 'hooks/useError';
+import { store } from 'store/store';
+import { Provider } from 'react-redux';
+
+const GlobalWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+`;
 
 export const AppProviders = ({ children }) => {
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <ErrorProvider>
-          <AuthProvider>
-            <GlobalStyle></GlobalStyle>
-            {children}
-          </AuthProvider>
-        </ErrorProvider>
-      </ThemeProvider>
-    </Router>
+    <GlobalWrapper>
+      <Router>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <ErrorProvider>
+              <AuthProvider>
+                <GlobalStyle />
+                {children}
+              </AuthProvider>
+            </ErrorProvider>
+          </ThemeProvider>
+        </Provider>
+      </Router>
+    </GlobalWrapper>
   );
 };

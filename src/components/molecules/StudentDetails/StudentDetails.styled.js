@@ -17,11 +17,19 @@ export const BigAverage = styled(StyledAverage)`
   font-size: ${({ theme }) => theme.fontSize.xl};
   position: absolute;
   left: 40px;
+
+  @media (max-width: 900px) {
+    position: static;
+  }
 `;
 
 export const StyledDetails = styled.div`
   width: 100%;
   padding: 40px;
+
+  @media (max-width: 600px) {
+    padding: 0;
+  }
 `;
 
 export const StyledLabel = styled.h3`
@@ -41,4 +49,8 @@ export const StyledSubjectInfo = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 250px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;

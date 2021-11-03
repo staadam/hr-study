@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Wrapper, NewsSectionHeader, ArticleWrapper, TitleWrapper, ContentWrapper, Loading } from './NewsSection.styles';
-// import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { Button } from 'components/atoms/Button/Button';
 import axios from 'axios';
+import { SEO } from 'components/molecules/SEO/SEO';
 
 export const query = `
 {
@@ -20,7 +20,7 @@ export const query = `
 
 export const url = 'https://graphql.datocms.com/';
 
-export const NewsSection = () => {
+export const NewsSection = ({ isClear = false }) => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState('');
 
@@ -42,7 +42,8 @@ export const NewsSection = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper isClear={isClear}>
+      {isClear ? <SEO directory={'News'} /> : null}
       <NewsSectionHeader>News feed section</NewsSectionHeader>
       {articles.length > 0 && !error ? (
         articles.map(({ id, title, category, content, image = null }) => (

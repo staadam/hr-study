@@ -17,15 +17,15 @@ export const db = factory({
     course: () => faker.fake('{{random.word}} {{random.word}}'),
     grades: () => [
       {
-        name: 'Business Philosophy',
+        name: faker.fake('{{random.word}} {{random.word}}'),
         average: getRandomAverage(),
       },
       {
-        name: 'Marketing',
+        name: faker.fake('{{random.word}} {{random.word}}'),
         average: getRandomAverage(),
       },
       {
-        name: 'Modern Economy',
+        name: faker.fake('{{random.word}} {{random.word}}'),
         average: getRandomAverage(),
       },
     ],
@@ -38,5 +38,10 @@ export const db = factory({
     name: () => 'Jacek Sobczak',
     login: () => 'teacher@studybuddy.com',
     password: () => '1234',
+  },
+  note: {
+    id: primaryKey(faker.datatype.uuid),
+    title: () => 'Lorem ipsum dolor sit amet.',
+    content: () => 'Lorem ipsum dolor sit amet.',
   },
 });

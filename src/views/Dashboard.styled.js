@@ -10,4 +10,9 @@ export const Wrapper = styled.section`
   ${ViewWrapper} {
     margin: 0;
   }
+
+  @media (max-width: 500px) {
+    width: 90%;
+    margin: 25px auto;
+  }
 `;
