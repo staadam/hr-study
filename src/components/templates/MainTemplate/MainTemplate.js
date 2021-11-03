@@ -26,8 +26,8 @@ const Wrapper = styled.main`
 const MainTemplate = ({ children }) => {
   return (
     <Wrapper>
-      <Navigation />
       <SearchBar />
+      <Navigation />
       <NewsSection />
       <NotesWidget />
       {children}

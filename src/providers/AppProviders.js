@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 import { GlobalStyle } from 'assets/styles/globalStyle';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { AuthProvider } from 'hooks/useAuth';
 import { ErrorProvider } from 'hooks/useError';
 import { store } from 'store/store';
@@ -15,7 +15,7 @@ export const AppProviders = ({ children }) => {
         <ThemeProvider theme={theme}>
           <ErrorProvider>
             <AuthProvider>
-              <GlobalStyle></GlobalStyle>
+              <GlobalStyle />
               {children}
             </AuthProvider>
           </ErrorProvider>

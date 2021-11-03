@@ -1,5 +1,4 @@
 import React from 'react';
-// import UsersProvider from 'providers/UsersProvider';
 import { useAuth } from 'hooks/useAuth';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useError } from 'hooks/useError';
