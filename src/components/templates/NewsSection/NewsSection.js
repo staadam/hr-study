@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Wrapper, NewsSectionHeader, ArticleWrapper, TitleWrapper, ContentWrapper, Loading } from './NewsSection.styles';
-// import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { Button } from 'components/atoms/Button/Button';
 import axios from 'axios';
 

@@ -17,6 +17,11 @@ export const SearchBarWrapper = styled.div`
     padding: 10px 15px;
     border: 2px solid ${({ theme }) => theme.colors.lightPurple};
   }
+
+  @media (max-width: 780px) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
 `;
 export const StatusInfo = styled.div`
   color: ${({ theme }) => theme.colors.darkGrey};

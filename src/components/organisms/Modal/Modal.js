@@ -7,7 +7,7 @@ export const Modal = ({ handleClose, isOpen, children, isGrade }) => {
     <ModalWrapper isGrade={isGrade} appElement={document.getElementById('root')} isOpen={isOpen} onRequestClose={handleClose}>
       {children}
       <Button isBig onClick={handleClose}>
-        CloseModal
+        Exit
       </Button>
     </ModalWrapper>
   );

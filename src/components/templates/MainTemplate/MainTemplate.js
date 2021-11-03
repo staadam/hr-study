@@ -17,13 +17,17 @@ const Wrapper = styled.main`
   @media (max-width: 1200px) {
     grid-template-columns: 150px 1fr;
   }
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const MainTemplate = ({ children }) => {
   return (
     <Wrapper>
-      <Navigation />
       <SearchBar />
+      <Navigation />
       <NewsSection />
       <NotesWidget />
       {children}

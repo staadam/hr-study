@@ -13,7 +13,9 @@ export const NotesWidget = () => {
 
   return (
     <Wrapper isOpen={isOpen}>
-      <WidgetHandler onClick={handleOpenWidget}>notes</WidgetHandler>
+      <WidgetHandler isOpen={isOpen} onClick={handleOpenWidget}>
+        notes
+      </WidgetHandler>
       {isLoading ? (
         <p>Loading ...</p>
       ) : (

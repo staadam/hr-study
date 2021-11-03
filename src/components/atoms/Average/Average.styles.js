@@ -5,6 +5,8 @@ export const StyledAverage = styled.div`
   align-items: center;
   justify-content: center;
 
+  flex-shrink: 0;
+
   width: 34px;
   height: 34px;
   border-radius: 50%;

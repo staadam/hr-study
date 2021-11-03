@@ -11,6 +11,17 @@ export const StyledNavigation = styled.nav`
   grid-column: 1/2;
   display: grid;
   grid-template-rows: 90px 1fr;
+
+  @media (max-width: 780px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.5s ease;
+    transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
+    z-index: 1000;
+  }
 `;
 
 export const StyledTitle = styled.h2`
@@ -72,6 +83,31 @@ export const StyledLink = styled(NavLink)`
     @media (max-width: 1200px) {
       display: block;
     }
+  }
+`;
+
+export const MenuButton = styled.button`
+  display: none;
+  position: absolute;
+  top: 63px;
+  left: -25px;
+  background-color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.white};
+  border: none;
+  cursor: pointer;
+
+  width: 80px;
+  height: 30px;
+  background-color: ${({ theme }) => theme.colors.darkGrey};
+  transform: rotate(90deg);
+  text-align: center;
+
+  border-radius: 8px 8px 0 0;
+
+  @media (max-width: 780px) {
+    display: block;
+
+    z-index: 1002;
   }
 `;
 
