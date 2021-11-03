@@ -9,6 +9,7 @@ import { Modal } from 'components/organisms/Modal/Modal';
 import { StudentDetails } from 'components/molecules/StudentDetails/StudentDetails';
 import { useGetGroupsQuery, useGetStudentsDetailsMutation, useGetStudentsByGroupQuery } from 'store/store';
 import { useError } from 'hooks/useError';
+import { SEO } from '../components/molecules/SEO/SEO';
 
 export const Dashboard = () => {
   const { dispatchError } = useError();
@@ -35,9 +36,13 @@ export const Dashboard = () => {
 
   return (
     <Wrapper>
+      <SEO directory={'Dashboard'} />
       <GroupNavigation groups={data.groups} group={group} />
       <ViewWrapper>
-        <UsersList users={studentsByGroup.data.students} handleOpenStudentDetails={handleOpenStudentDetails} />
+        <UsersList
+          users={studentsByGroup.data.students}
+          handleOpenStudentDetails={handleOpenStudentDetails}
+        />
 
         {currentStudent ? (
           <Modal isOpen={isOpen} handleClose={handleCloseModal}>

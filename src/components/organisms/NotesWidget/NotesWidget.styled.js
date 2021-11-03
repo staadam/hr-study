@@ -13,8 +13,8 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   z-index: 999;
 
-  @media (max-width: 780px) {
-    top: 0px;
+  @media (max-width: 900px) {
+    top: 0;
     width: 100%;
     height: 100vh;
   }
@@ -33,7 +33,7 @@ export const WidgetHandler = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (max-width: 780px) {
+  @media (max-width: 900px) {
     top: ${({ isOpen }) => (isOpen ? '0px' : '63px')};
     left: ${({ isOpen }) => (isOpen ? '0px' : '-55px')};
     border-radius: ${({ isOpen }) => (isOpen ? '0 0 8px 0' : '8px 8px 0 0')};
