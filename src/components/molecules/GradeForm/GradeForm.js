@@ -34,13 +34,7 @@ export const GradeForm = ({ id, updateStudentDetails, handleCloseModal }) => {
     <FormWrapper>
       <FormField label="Subject" name="subject" id="subject" {...register('name', { required: true })} />
       {errors.name ? 'Subject is required' : null}
-      <FormField
-        label="Grade"
-        name="grade"
-        id="grade"
-        type="number"
-        {...register('average', { required: true })}
-      />
+      <FormField label="Grade" name="grade" id="grade" type="number" {...register('average', { required: true })} />
       {errors.average ? 'Grade is required and must contain only numbers' : null}
       <Button onClick={handleSubmit(handleAddGrade)}>Add</Button>
     </FormWrapper>
